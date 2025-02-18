@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        min-height: 100vh;
+      }
+      .container {
+        display: flex;
+      }
+
+      #main {
+        display: flex;
+        flex: 1; /* menempati ruang kosong di container body*/
+        width: 80vw;
+      }
+      #main > article {
+        flex: 1; /* menempati sisa ruang yang ada pada flex container main */
+        order: 1;
+        height: 60vh;
+      }
+      #main aside {
+        flex: 0 0 20vw; /* mengatur lebar nav dan aside sebesar 20% dari lebar parent div main */
+      }
+
+      #main > aside {
+        background-color: palevioletred;
+        order: 2;
+      }
+      nav {
+        background-color: aqua;
+        width: 20vw;
+      }
+
+      header,
+      footer {
+        background: #ffa500;
+        height: 20vh;
+      } /* vh satuan css yang relatif ke layar browser
+vh = mengatur tinggi layar browser */
+
+      header,
+      footer,
+      article,
+      nav,
+      aside {
+        padding: 1em;
+      }
+    </style>
+
+    <title>Layout Flexbox 1</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav>Ini adalah nav</nav>
+      <div class="box">
+        <header>Ini adalah header</header>
+        <div id="main">
+          <!-- Ukuran Article 60% -->
+          <article>Ini adalah article</article>
+          <!-- Ukuran Navbar 20% -->
+          <!-- Ukuran Aside 20% -->
+          <aside>Ini adalah aside</aside>
+        </div>
+        <footer>Ini adalah Footer</footer>
+      </div>
+    </div>
+  </body>
+</html>

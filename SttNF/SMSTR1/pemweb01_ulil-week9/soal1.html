@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soal 1</title>
+</head>
+<body>
+    <span id="pi"></span>
+    <br>
+    <span id="jari"></span>
+    <br>
+    <span id="luas"></span>
+    <br>
+    <span id="keliling"></span>
+
+    <script>
+        // var
+        const phi = 3.14;
+        console.log("Nilai Phi adalah " + phi);
+        // var
+        let jari = 14;
+        console.log("Nilai Jari-Jari adalah " + jari);
+        // var
+        let luas = phi * (jari * jari);
+        console.log("Nilai luas lingkaran adalah " + luas);
+        // var
+        let keliling = phi * (2 * jari);
+        console.log("Nilai kel lingkaran adalah " + keliling)
+        // 
+        document.getElementById("pi").innerHTML = "PHI : " + phi;
+        document.getElementById("jari").innerHTML = "<br>Nilai jari-jari Adalah : " + jari; 
+        document.getElementById("luas").innerHTML = "<br>Nilai luas : " + luas;
+        document.getElementById("keliling").innerHTML = "<br>Nilai Keliling Adalah : " + keliling;
+    </script>
+</body>
+</html>

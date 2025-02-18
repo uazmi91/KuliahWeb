@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bayar Parkir</title>
+</head>
+<body>
+    <h3>Biaya Parkir</h3>
+    <label for="entry">Jam Masuk</label>
+    :<input id="entry" type="number" value="">
+    <br>
+    <br>
+    <label for="exit">Jam Keluar</label>
+    :<input id="exit" type="number" value="">
+    <br>
+    <br>
+    <!-- space -->
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!--  -->
+    <button onclick="hitung()">Hitung</button>
+    <br>
+    <br>
+    <label>Biaya</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    :<span id="price"></span>
+
+    <!-- JS -->
+    <script>
+        function hitung() {
+            const per2jam_awal = 3000; // tarif 2 jam awal
+            const sejam = 1000; //tarif satu jam berikutnya
+            let msk = document.getElementById("entry").value;
+            let klr = document.getElementById("exit").value;
+            let selisih = klr - msk;
+            let biaya = 0;
+            if(selisih <= 2) {
+                biaya = per2jam_awal;
+            }else {
+                let jam_tambahan = selisih - 2;
+                biaya = per2jam_awal + (sejam * jam_tambahan);
+            }
+
+            let hasil = document.getElementById("price");
+                hasil.innerHTML =" " + biaya
+        }
+    </script>
+</body>
+</html>

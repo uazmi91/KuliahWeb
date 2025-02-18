@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pemesanan barang</title>
+</head>
+<body bgcolor="#7978FF">
+    <table align="center" bgcolor="#fff" style="border: 1px solid;" >
+        <tr>
+            <td style=" padding: 0 60px; ">Home |</td>
+            <td style=" padding: 0 60px; ">Generate Link |</td>
+            <td style=" padding: 0 60px; ">Transaction History |</td>
+            <td style=" padding: 0 60px; ">Policy |</td> 
+            <td style=" padding: 0 60px; ">Logout |</td>
+        </tr>
+    </table>
+    <form action="payment.html" method="get">
+        <table align="center" width="980" cellpadding="10">
+             <tbody>
+                <tr>
+                    <td rowspan="9" width ="300">
+                        <img src="image/Buy DJI Mini 3 Pro - DJI Store.png" alt="ini drone" width="300" style="border: 2px solid #000;">
+                        <button bgcolor="#fff" style="border: 2px solid #000">
+                            Upload Picture
+                        </button>
+                    </td>
+                    <td width="100px">Title Here</td>
+                    <td>:<input type="text" name="nama barang" placeholder="DJI Drone"></td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>:<textarea name="deskripsi" cols="30" rows="5" placeholder="Year : YYYY Model : Drone"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Account Number</td>
+                    <td>:<input type="number" name="nomor akun" placeholder="123-***-***-0"/></td>
+                </tr>
+                <tr>
+                    <td>Bank</td>
+                    <td>
+                        :<select>
+                            <option>VISA</option>
+                            <option>MAESTRO</option>
+                            <option>PAYPAL</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Account Holder</td>
+                    <td>:<input type="text" name="nama pengguna" placeholder="Your Account"></td>
+                </tr>
+                <tr>
+                    <td>Transaction</td>
+                    <td>
+                        <input type="number" name="transaksi" placeholder="0" min="0" max="10" ><br />* if the transaction is for 3 person, choose 3 from the drop-down list <br />
+                        <input type="checkbox">Send to Mobile Phone <br />
+                        <input type="checkbox">Send to Email
+                    </td>
+                </tr>
+                <tr>
+                    <td>Send to Mobile Phone</td>
+                    <td>:<input type="number" name="nomor hp" placeholder="Your Phone Number"></td>
+                </tr>
+                <tr>
+                    <td>Send to Email</td>
+                    <td>:<input type="email" name="email" placeholder="Your Email"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Ganerate Nabr Link" 
+                        style="background-color: #009d0e; color:white; padding: 3px 15px; border: 2px solid #000;">
+                    </td>
+                </tr>
+             </tbody>
+        </table>
+    </form>
+</body>
+</html>

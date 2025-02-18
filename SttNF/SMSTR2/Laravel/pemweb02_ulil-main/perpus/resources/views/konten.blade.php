@@ -1,0 +1,6 @@
+<div class="col-md-9">
+     @yield('isihalaman')                 
+</div>
+<!--akhir KONTEN-->
+</div>
+</div>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin:0; 
+        }
+        .fieldset {
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+            border-color: black;
+
+        }
+        table {
+            width: 100%;
+        }
+        /* Table Top */
+        .first{
+            margin-bottom: 20px
+        }
+        .table-left{
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        .table-main{
+                width: 40%;
+                padding: 20px;
+        }
+        .table-right{
+            width: 25%;
+            padding: 20px;
+            text-align: end;
+        }
+        /* Akhir Table Top*/
+        img {
+            width: 300px;
+        }
+        video {
+            width: 300px;
+        }
+        /* Table Bottom*/
+
+         .secound p {
+            text-align: justify;
+         }
+         .half {
+            width: 33,3%;
+            padding: 20px;
+         }
+         .half fieldset{
+            border-color: black;
+            width: 300px;
+            height: 300px;
+         }
+
+    </style>
+    <title>Profile Me</title>
+</head>
+<body>
+    <fieldset class="fieldset">
+        <legend>Directory Profile Page</legend>
+
+        <!-- Table Atas -->
+        <table class="first">
+            <tr>
+                <td class="table-left">
+                    <img src="image/348320220321182035.jpg" alt="Chamber">
+                </td>
+                <td class="table-main">
+                    <h2>Chamber</h2> 
+                    <p>245 Blackfriars Road</p>
+                    <p>Ludagate House</p>
+                    <p>London, SEI 9UY</p>
+                    <p>Email: <a href="mailto:chamberheadgun@gmail.com">Chamberheadgun@gmail.com</a></p>
+                    <p>Telephone: <a href="tel:3216541234">+62 812 8922 0649</a></p>
+                </td>
+                <td class="table-right">
+                    <u>Categories</u>
+                    <p>Lorem ipsum</p>
+                    <p>Dolar sit</p>
+                    <p>amet</p>
+                    <p>Dolar sit</p>
+                </td>
+            </tr>
+        </table>
+        <!-- Table Atas -->
+
+        <!-- Table Bawah -->
+        <table class="secound">
+            <tr> 
+                <td class="table-left" colspan="3">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam mollitia tempore consectetur cumque quidem maxime esse delectus reprehenderit cupiditate quo. Hic, eveniet doloremque reiciendis repellat animi saepe nemo temporibus totam?
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, blanditiis corrupti? Magnam eaque, quae culpa omnis nemo vitae eius eligendi cumque fuga ipsam ipsum a minus deserunt velit officiis eum.
+                    </p>
+                </td>
+            </tr>
+            <tr class="half">
+                <td>
+                    <video controls>
+                        <source  src="video/L’Accord - Chamber Agent Trailer __ VALORANT.mp4" type="video/mp4" >
+                    </video>
+                </td>
+                <td class="half"><img src="image/348320220321182035.jpg" alt="Chamber"></td>
+                <td class="half">
+                    <fieldset>
+                        <legend>Skills</legend>
+                        <ul style="font-size: 20px;">
+                            <li><a href="#">Rendesvous (E)</a></li>
+                            <li><a href="#">Headhunter (Q)</a></li>
+                            <li><a href="#">Trademark (C)</a></li>
+                            <li><a href="#">Tour de Force (X)</a></li>
+                        </ul>
+                    </fieldset>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</body>
+</html>

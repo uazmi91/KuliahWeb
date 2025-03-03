@@ -1,0 +1,52 @@
+/* Custom CSS */
+.header, .nav-menu, .content, .main-content, .footer {
+    min-height: 100px;
+    border: 1px solid #000;
+    padding: 15px;
+    margin-bottom: 5px;
+}
+
+.content, .main-content {
+    min-height: 300px;
+}
+
+.external-links {
+    margin-top: 20px;
+}
+
+.external-links a {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.external-links a:hover {
+    background-color: #f8f9fa;
+}
+
+.footer {
+    text-align: center;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.carousel-item img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.navbar-brand img {
+    height: 40px;
+}
+

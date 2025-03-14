@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Luas Bangun Datar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #444;
+            margin-top: 0;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kalkulator Luas Bangun Datar</h1>
+    
+    <div class="container">
+        <!-- Kartu untuk persegi panjang -->
+        <div class="card">
+            <h2>Persegi Panjang</h2>
+            <label for="panjang">Panjang:</label>
+            <input type="number" id="panjang" value="10">
+            
+            <label for="lebar">Lebar:</label>
+            <input type="number" id="lebar" value="5">
+            
+            <button onclick="hitungLuasPersegiPanjang()">Hitung Luas</button>
+            
+            <div class="result" id="hasilPersegiPanjang"></div>
+        </div>
+        
+        <!-- Kartu untuk bujur sangkar (persegi) -->
+        <div class="card">
+            <h2>Bujur Sangkar (Persegi)</h2>
+            <label for="sisi">Panjang Sisi:</label>
+            <input type="number" id="sisi" value="7">
+            
+            <button onclick="hitungLuasBujurSangkar()">Hitung Luas</button>
+            
+            <div class="result" id="hasilBujurSangkar"></div>
+        </div>
+        
+        <!-- Kartu untuk segitiga -->
+        <div class="card">
+            <h2>Segitiga</h2>
+            <label for="alas">Alas:</label>
+            <input type="number" id="alas" value="8">
+            
+            <label for="tinggi">Tinggi:</label>
+            <input type="number" id="tinggi" value="6">
+            
+            <button onclick="hitungLuasSegitiga()">Hitung Luas</button>
+            
+            <div class="result" id="hasilSegitiga"></div>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * Fungsi untuk menghitung luas persegi panjang
+         * Rumus: Luas = Panjang × Lebar
+         * Mengambil nilai dari input, menghitung luas, dan menampilkan hasil
+         */
+        function hitungLuasPersegiPanjang() {
+            // Mengambil nilai panjang dan lebar dari input
+            const panjang = parseFloat(document.getElementById("panjang").value);
+            const lebar = parseFloat(document.getElementById("lebar").value);
+            
+            // Validasi input
+            if (isNaN(panjang) || isNaN(lebar) || panjang <= 0 || lebar <= 0) {
+                document.getElementById("hasilPersegiPanjang").innerHTML = "Masukkan nilai yang valid (angka positif)";
+                return;
+            }
+            
+            // Menghitung luas menggunakan rumus panjang × lebar
+            const luas = panjang * lebar;
+            
+            // Menampilkan hasil
+            document.getElementById("hasilPersegiPanjang").innerHTML = 
+                `Luas = ${panjang} × ${lebar} = ${luas} satuan²`;
+        }
+        
+        /**
+         * Fungsi untuk menghitung luas bujur sangkar (persegi)
+         * Rumus: Luas = Sisi × Sisi atau Sisi²
+         * Mengambil nilai dari input, menghitung luas, dan menampilkan hasil
+         */
+        function hitungLuasBujurSangkar() {
+            // Mengambil nilai sisi dari input
+            const sisi = parseFloat(document.getElementById("sisi").value);
+            
+            // Validasi input
+            if (isNaN(sisi) || sisi <= 0) {
+                document.getElementById("hasilBujurSangkar").innerHTML = "Masukkan nilai yang valid (angka positif)";
+                return;
+            }
+            
+            // Menghitung luas menggunakan rumus sisi²
+            const luas = sisi * sisi;
+            
+            // Menampilkan hasil
+            document.getElementById("hasilBujurSangkar").innerHTML = 
+                `Luas = ${sisi} × ${sisi} = ${luas} satuan²`;
+        }
+        
+        /**
+         * Fungsi untuk menghitung luas segitiga
+         * Rumus: Luas = (Alas × Tinggi) / 2
+         * Mengambil nilai dari input, menghitung luas, dan menampilkan hasil
+         */
+        function hitungLuasSegitiga() {
+            // Mengambil nilai alas dan tinggi dari input
+            const alas = parseFloat(document.getElementById("alas").value);
+            const tinggi = parseFloat(document.getElementById("tinggi").value);
+            
+            // Validasi input
+            if (isNaN(alas) || isNaN(tinggi) || alas <= 0 || tinggi <= 0) {
+                document.getElementById("hasilSegitiga").innerHTML = "Masukkan nilai yang valid (angka positif)";
+                return;
+            }
+            
+            // Menghitung luas menggunakan rumus (alas × tinggi) / 2
+            const luas = (alas * tinggi) / 2;
+            
+            // Menampilkan hasil
+            document.getElementById("hasilSegitiga").innerHTML = 
+                `Luas = (${alas} × ${tinggi}) / 2 = ${luas} satuan²`;
+        }
+        
+        // Menjalankan perhitungan awal saat halaman dimuat
+        window.onload = function() {
+            hitungLuasPersegiPanjang();
+            hitungLuasBujurSangkar();
+            hitungLuasSegitiga();
+        };
+    </script>
+</body>
+</html>

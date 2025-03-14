@@ -1,0 +1,124 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Container utama */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Styling umum untuk semua bagian layout */
+header, nav, aside, main, footer {
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+/* Style untuk header */
+header {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    color: #4CAF50;
+}
+
+/* Style untuk navigation menu */
+nav {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav h2 {
+    color: #4CAF50;
+}
+
+/* Content wrapper - menggunakan flexbox untuk layout 3 kolom */
+.content-wrapper {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+/* Style untuk sidebar kiri */
+.left-sidebar {
+    width: 20%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-sidebar h2 {
+    color: #4CAF50;
+}
+
+/* Style untuk konten utama */
+main {
+    width: 60%;
+    height: 300px;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main h2 {
+    color: #4CAF50;
+}
+
+/* Style untuk sidebar kanan */
+.right-sidebar {
+    width: 20%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-sidebar h2 {
+    color: #4CAF50;
+}
+
+/* Style untuk footer */
+footer {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer h2 {
+    color: #4CAF50;
+}
+
+/* Media query untuk responsivitas pada layar kecil */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+    
+    .left-sidebar, main, .right-sidebar {
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+}

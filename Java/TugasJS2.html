@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pegawai</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        thead {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        
+        tfoot {
+            background-color: #e6e6e6;
+            font-weight: bold;
+        }
+        
+        h1 {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Pegawai</h1>
+    <div id="tabelPegawai"></div>
+
+    <script>
+        // Data pegawai
+        const pegawai = {
+            nama: "Dodi Prayodi",
+            umur: 25,
+            jabatan: "Manajer",
+            status: "Menikah"
+        };
+
+        // Fungsi untuk menghitung gaji pokok berdasarkan jabatan
+        function hitungGajiPokok(jabatan) {
+            if (jabatan === "Manajer") {
+                return 15000000;
+            } else if (jabatan === "Asisten Manajer") {
+                return 10000000;
+            } else if (jabatan === "Staff") {
+                return 5000000;
+            } else {
+                return 0;
+            }
+        }
+
+        // Hitung gaji pokok
+        const gajiPokok = hitungGajiPokok(pegawai.jabatan);
+        
+        // Hitung tunjangan jabatan (15% dari gapok)
+        const tunjanganJabatan = gajiPokok * 0.15;
+        
+        // Hitung BPJS (10% dari gapok)
+        const bpjs = gajiPokok * 0.1;
+        
+        // Hitung tunjangan keluarga (20% dari gapok jika menikah, 0 jika tidak)
+        const tunjanganKeluarga = pegawai.status === "Menikah" ? gajiPokok * 0.2 : 0;
+        
+        // Hitung total gaji
+        const totalGaji = gajiPokok + tunjanganJabatan + tunjanganKeluarga - bpjs;
+
+        // Format angka sebagai mata uang Rupiah
+        function formatRupiah(angka) {
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0
+            }).format(angka);
+        }
+
+        // Buat tabel HTML
+        let tabelHTML = `
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama Pegawai</th>
+                    <th>Umur</th>
+                    <th>Jabatan</th>
+                    <th>Status</th>
+                    <th>Gaji Pokok</th>
+                    <th>Tunjangan Jabatan</th>
+                    <th>BPJS</th>
+                    <th>Tunjangan Keluarga</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>${pegawai.nama}</td>
+                    <td>${pegawai.umur} tahun</td>
+                    <td>${pegawai.jabatan}</td>
+                    <td>${pegawai.status}</td>
+                    <td>${formatRupiah(gajiPokok)}</td>
+                    <td>${formatRupiah(tunjanganJabatan)}</td>
+                    <td>${formatRupiah(bpjs)}</td>
+                    <td>${formatRupiah(tunjanganKeluarga)}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="7" style="text-align: right;">Total Gaji:</td>
+                    <td>${formatRupiah(totalGaji)}</td>
+                </tr>
+            </tfoot>
+        </table>
+        `;
+
+        // Tampilkan tabel
+        document.getElementById("tabelPegawai").innerHTML = tabelHTML;
+    </script>
+</body>
+</html>
